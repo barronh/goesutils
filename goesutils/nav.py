@@ -2,7 +2,7 @@ __all__ = ['NOAAs3']
 
 
 class NOAAs3:
-    def __init__(self, bucket):
+    def __init__(self, bucket, workdir='.'):
         """
         Create a NOAA s3 navigation object.
 
@@ -11,6 +11,8 @@ class NOAAs3:
         bucket : str
             Usually noaa-goes16 (GOES-East), noaa-goes17 (GOES-West), or
             noaa-goes18 (GOES-West current)
+        workdir : str
+            Root path for downloading files to.
 
         Example Usage
         -------------
@@ -46,6 +48,7 @@ class NOAAs3:
         cfg = Config(signature_version=UNSIGNED)
         self.s3 = s3 = boto3.resource('s3', config=cfg)
         self.bucket = s3.Bucket(bucket)
+        self.workdir = workdir
 
     def get_shortnames(self):
         """
@@ -85,7 +88,9 @@ class NOAAs3:
             remotekeys.extend(inpaths)
         return remotekeys
 
-    def getfiles(self, remotekeys=None, short_name=None, dates=None):
+    def getfiles(
+        self, remotekeys=None, short_name=None, dates=None, workdir=None
+    ):
         """
         Arguments
         ---------
@@ -95,6 +100,9 @@ class NOAAs3:
         dates : list or None
             If remotekeys is None, then use short_name and dates with findfiles
             to get remotekeys
+        workdir : str
+            Working root directory for downloading files. Defaults to
+            self.workdir
 
         Returns
         -------
@@ -103,13 +111,16 @@ class NOAAs3:
         """
         import os
 
+        if workdir is None:
+            workdir = self.workdir
+
         localpaths = []
         if remotekeys is None:
             remotekeys = self.findfiles(short_name=short_name, dates=dates)
 
         for remotekey in remotekeys:
             print(remotekey)
-            localpath = f's3.{self.bucket.name}/{remotekey}'
+            localpath = f'{workdir}/s3.{self.bucket.name}/{remotekey}'
             os.makedirs(os.path.dirname(localpath), exist_ok=True)
             if not os.path.exists(localpath):
                 self.bucket.download_file(remotekey, localpath)
@@ -153,6 +164,7 @@ class NOAAs3:
                 align_items='stretch', width='50%'
             ))
             self._form = form
+
         return self._form
 
     def findfiles_from_form(self):
