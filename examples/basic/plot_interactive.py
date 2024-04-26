@@ -15,6 +15,7 @@ import goesutils
 #
 # * form defaults to ABI-L2-AOD a week ago at 0Z
 # * change anything you want
+# * product definitions: https://docs.opendata.aws/noaa-goes16/cics-readme.html
 
 nav = goesutils.NOAAs3('noaa-goes16')
 nav.form
