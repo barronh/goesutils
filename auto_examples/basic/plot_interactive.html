@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Find and Retrieve Files w/ GUI &#8212; goesutils 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Find and Retrieve Files" href="query_example.html" />
+    <link rel="prev" title="goesutils Basics" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-basic-plot-interactive-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="find-and-retrieve-files-w-gui">
+<span id="sphx-glr-auto-examples-basic-plot-interactive-py"></span><h1>Find and Retrieve Files w/ GUI<a class="headerlink" href="#find-and-retrieve-files-w-gui" title="Link to this heading">¶</a></h1>
+<p>Find ABI-L2-MCMIPC files from GOES-16.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">goesutils</span>
+</pre></div>
+</div>
+<section id="navigator-has-a-interactive-form">
+<h2>Navigator has a Interactive Form<a class="headerlink" href="#navigator-has-a-interactive-form" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>form defaults to ABI-L2-AOD a week ago at 0Z</p></li>
+<li><p>change anything you want</p></li>
+<li><p>product definitions: <a class="reference external" href="https://docs.opendata.aws/noaa-goes16/cics-readme.html">https://docs.opendata.aws/noaa-goes16/cics-readme.html</a></p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nav</span> <span class="o">=</span> <span class="n">goesutils</span><span class="o">.</span><span class="n">NOAAs3</span><span class="p">(</span><span class="s1">&#39;noaa-goes16&#39;</span><span class="p">)</span>
+<span class="n">nav</span><span class="o">.</span><span class="n">form</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Box(children=(Box(children=(Label(value=&#39;GOES Options&#39;),), layout=Layout(display=&#39;flex&#39;, flex_flow=&#39;row&#39;, justify_content=&#39;space-between&#39;)), Box(children=(Dropdown(description=&#39;Product&#39;, index=25, options=(&#39;ABI-L1b-RadC&#39;, &#39;ABI-L1b-RadF&#39;, &#39;ABI-L1b-RadM&#39;, &#39;ABI-L2-ACHA2KMC&#39;, &#39;ABI-L2-ACHA2KMF&#39;, &#39;ABI-L2-ACHA2KMM&#39;, &#39;ABI-L2-ACHAC&#39;, &#39;ABI-L2-ACHAF&#39;, &#39;ABI-L2-ACHAM&#39;, &#39;ABI-L2-ACHP2KMC&#39;, &#39;ABI-L2-ACHP2KMF&#39;, &#39;ABI-L2-ACHP2KMM&#39;, &#39;ABI-L2-ACHTF&#39;, &#39;ABI-L2-ACHTM&#39;, &#39;ABI-L2-ACMC&#39;, &#39;ABI-L2-ACMF&#39;, &#39;ABI-L2-ACMM&#39;, &#39;ABI-L2-ACTPC&#39;, &#39;ABI-L2-ACTPF&#39;, &#39;ABI-L2-ACTPM&#39;, &#39;ABI-L2-ADPC&#39;, &#39;ABI-L2-ADPF&#39;, &#39;ABI-L2-ADPM&#39;, &#39;ABI-L2-AICEF&#39;, &#39;ABI-L2-AITAF&#39;, &#39;ABI-L2-AODC&#39;, &#39;ABI-L2-AODF&#39;, &#39;ABI-L2-BRFC&#39;, &#39;ABI-L2-BRFF&#39;, &#39;ABI-L2-BRFM&#39;, &#39;ABI-L2-CCLC&#39;, &#39;ABI-L2-CCLF&#39;, &#39;ABI-L2-CCLM&#39;, &#39;ABI-L2-CMIPC&#39;, &#39;ABI-L2-CMIPF&#39;, &#39;ABI-L2-CMIPM&#39;, &#39;ABI-L2-COD2KMF&#39;, &#39;ABI-L2-CODC&#39;, &#39;ABI-L2-CODF&#39;, &#39;ABI-L2-CPSC&#39;, &#39;ABI-L2-CPSF&#39;, &#39;ABI-L2-CPSM&#39;, &#39;ABI-L2-CTPC&#39;, &#39;ABI-L2-CTPF&#39;, &#39;ABI-L2-DMWC&#39;, &#39;ABI-L2-DMWF&#39;, &#39;ABI-L2-DMWM&#39;, &#39;ABI-L2-DMWVC&#39;, &#39;ABI-L2-DMWVF&#39;, &#39;ABI-L2-DMWVM&#39;, &#39;ABI-L2-DSIC&#39;, &#39;ABI-L2-DSIF&#39;, &#39;ABI-L2-DSIM&#39;, &#39;ABI-L2-DSRC&#39;, &#39;ABI-L2-DSRF&#39;, &#39;ABI-L2-DSRM&#39;, &#39;ABI-L2-FDCC&#39;, &#39;ABI-L2-FDCF&#39;, &#39;ABI-L2-FDCM&#39;, &#39;ABI-L2-FSCC&#39;, &#39;ABI-L2-FSCF&#39;, &#39;ABI-L2-FSCM&#39;, &#39;ABI-L2-LSAC&#39;, &#39;ABI-L2-LSAF&#39;, &#39;ABI-L2-LSAM&#39;, &#39;ABI-L2-LST2KMF&#39;, &#39;ABI-L2-LSTC&#39;, &#39;ABI-L2-LSTF&#39;, &#39;ABI-L2-LSTM&#39;, &#39;ABI-L2-LVMPC&#39;, &#39;ABI-L2-LVMPF&#39;, &#39;ABI-L2-LVMPM&#39;, &#39;ABI-L2-LVTPC&#39;, &#39;ABI-L2-LVTPF&#39;, &#39;ABI-L2-LVTPM&#39;, &#39;ABI-L2-MCMIPC&#39;, &#39;ABI-L2-MCMIPF&#39;, &#39;ABI-L2-MCMIPM&#39;, &#39;ABI-L2-RRQPEF&#39;, &#39;ABI-L2-RSRC&#39;, &#39;ABI-L2-RSRF&#39;, &#39;ABI-L2-SSTF&#39;, &#39;ABI-L2-TPWC&#39;, &#39;ABI-L2-TPWF&#39;, &#39;ABI-L2-TPWM&#39;, &#39;ABI-L2-VAAF&#39;, &#39;EXIS-L1b-SFEU&#39;, &#39;EXIS-L1b-SFXR&#39;, &#39;GLM-L2-LCFA&#39;, &#39;MAG-L1b-GEOF&#39;, &#39;SEIS-L1b-EHIS&#39;, &#39;SEIS-L1b-MPSH&#39;, &#39;SEIS-L1b-MPSL&#39;, &#39;SEIS-L1b-SGPS&#39;, &#39;SUVI-L1b-Fe093&#39;, &#39;SUVI-L1b-Fe131&#39;, &#39;SUVI-L1b-Fe171&#39;, &#39;SUVI-L1b-Fe195&#39;, &#39;SUVI-L1b-Fe284&#39;, &#39;SUVI-L1b-He303&#39;), value=&#39;ABI-L2-AODC&#39;),), layout=Layout(display=&#39;flex&#39;, flex_flow=&#39;row&#39;, justify_content=&#39;space-between&#39;)), Box(children=(DatePicker(value=datetime.date(2024, 4, 19), description=&#39;Start Date&#39;, step=1), DatePicker(value=datetime.date(2024, 4, 19), description=&#39;End Date&#39;, step=1)), layout=Layout(display=&#39;flex&#39;, flex_flow=&#39;row&#39;, justify_content=&#39;space-between&#39;)), Box(children=(Dropdown(description=&#39;Start Hour&#39;, index=17, options=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23), value=17), Dropdown(description=&#39;End Hour&#39;, index=17, options=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23), value=17)), layout=Layout(display=&#39;flex&#39;, flex_flow=&#39;row&#39;, justify_content=&#39;space-between&#39;))), layout=Layout(align_items=&#39;stretch&#39;, border_bottom=&#39;solid 2px&#39;, border_left=&#39;solid 2px&#39;, border_right=&#39;solid 2px&#39;, border_top=&#39;solid 2px&#39;, display=&#39;flex&#39;, flex_flow=&#39;column&#39;, width=&#39;50%&#39;))
+</pre></div>
+</div>
+</section>
+<section id="navigator-form-interaction-utilities">
+<h2>Navigator form interaction utilities<a class="headerlink" href="#navigator-form-interaction-utilities" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>findfiles_from_form adn getfiles_from_form</p></li>
+<li><p>for more information, see documentation.</p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">remotepaths</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">findfiles_from_form</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">remotepaths</span><span class="p">),</span> <span class="s1">&#39;files eg,&#39;</span><span class="p">,</span> <span class="n">remotepaths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># 12 files eg, ABI-L2-AODC/2024/110/00/OR_ABI-L2-AODC-M6_G16_s20241100001171_e20241100003544_c20241100006242.nc</span>
+
+<span class="c1"># Use get to download them instead</span>
+<span class="c1"># localpaths = s3.getfiles_from_form()</span>
+<span class="c1"># or use getfiles</span>
+<span class="n">localpaths</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">getfiles</span><span class="p">(</span><span class="n">remotepaths</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>12 files eg, ABI-L2-AODC/2024/110/17/OR_ABI-L2-AODC-M6_G16_s20241101701171_e20241101703544_c20241101706390.nc
+ABI-L2-AODC/2024/110/17/OR_ABI-L2-AODC-M6_G16_s20241101701171_e20241101703544_c20241101706390.nc
+</pre></div>
+</div>
+</section>
+<section id="plot-with-helper-utilities">
+<h2>Plot with helper utilities<a class="headerlink" href="#plot-with-helper-utilities" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>findfiles_from_form adn getfiles_from_form</p></li>
+<li><p>for more information, see documentation.</p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">goesutils.proj</span> <span class="kn">import</span> <span class="n">getproj</span>
+<span class="kn">import</span> <span class="nn">pycno</span>
+
+<span class="n">aodds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">localpaths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">getproj</span><span class="p">(</span><span class="n">aodds</span><span class="p">)</span>
+<span class="n">cno</span> <span class="o">=</span> <span class="n">pycno</span><span class="o">.</span><span class="n">cno</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">qm</span> <span class="o">=</span> <span class="n">aodds</span><span class="p">[</span><span class="s1">&#39;AOD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">aodds</span><span class="p">[</span><span class="s1">&#39;DQF&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cno</span><span class="o">.</span><span class="n">drawstates</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">qm</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">qm</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;aod.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_interactive_001.png" srcset="../../_images/sphx_glr_plot_interactive_001.png" alt="t = 2024-04-19T17:02:35.768493952, y_image = 0...." class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pycno/__init__.py:538: UserWarning: Downloading: https://www.giss.nasa.gov/tools/panoply/overlays/MWDB_Coasts_NA_3.cnob to /home/runner/.pycno/MWDB_Coasts_NA_3.cnob
+  warnings.warn(&#39;Downloading: &#39; + url + &#39; to &#39; + str(datapatho))
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.778 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-basic-plot-interactive-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/87c7fd1715ff2acdd1e838c93644e880/plot_interactive.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_interactive.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/0ef7f5723c74af659fd8173eae2bc473/plot_interactive.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_interactive.py</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">goesutils</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">goesutils User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">goesutils Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#goesutils-basics">goesutils Basics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#goesutils-maps">goesutils Maps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/goesutils.html">goesutils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">goesutils</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">goesutils Example Gallery</a><ul>
+  <li><a href="index.html">goesutils Basics</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">goesutils Basics</a></li>
+      <li>Next: <a href="query_example.html" title="next chapter">Find and Retrieve Files</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2023, Barron H. Henderson.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../_sources/auto_examples/basic/plot_interactive.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

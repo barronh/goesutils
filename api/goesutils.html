@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>goesutils package &#8212; goesutils 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="goesutils.tests package" href="goesutils.tests.html" />
+    <link rel="prev" title="Plot Truecolor Approximation" href="../auto_examples/maps/plot_truecolor.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="goesutils-package">
+<h1>goesutils package<a class="headerlink" href="#goesutils-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="goesutils.tests.html">goesutils.tests package</a></li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-goesutils.abi">
+<span id="goesutils-abi-module"></span><h2>goesutils.abi module<a class="headerlink" href="#module-goesutils.abi" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-goesutils.nav">
+<span id="goesutils-nav-module"></span><h2>goesutils.nav module<a class="headerlink" href="#module-goesutils.nav" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">goesutils.nav.</span></span><span class="sig-name descname"><span class="pre">NOAAs3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'noaa-goes16'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.findfiles">
+<span class="sig-name descname"><span class="pre">findfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.findfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3.findfiles" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>short_name</strong> (<em>str</em>) – One of the items in get_shortnames</p></li>
+<li><p><strong>dates</strong> (<em>iterable</em>) – List or other iterable of date objects that support strftime</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>remotekeys</strong> – List of remote keys that can be retrieved from S3 bucket.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.findfiles_from_form">
+<span class="sig-name descname"><span class="pre">findfiles_from_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.findfiles_from_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3.findfiles_from_form" title="Link to this definition">¶</a></dt>
+<dd><p>Same as findfiles, but arguments are taken from the form object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.form">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#goesutils.nav.NOAAs3.form" title="Link to this definition">¶</a></dt>
+<dd><p>ipywidgets form object for Graphical User Interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.get_shortnames">
+<span class="sig-name descname"><span class="pre">get_shortnames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.get_shortnames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3.get_shortnames" title="Link to this definition">¶</a></dt>
+<dd><p>Find all short names available from bucket (e.g., ABI-L2-AODC)
+Short names are defined in more detail at
+<a class="reference external" href="https://docs.opendata.aws/noaa-goes16/cics-readme.html">https://docs.opendata.aws/noaa-goes16/cics-readme.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Prefix</strong> – List of Prefixes (including traling /)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.getfiles">
+<span class="sig-name descname"><span class="pre">getfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remotekeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.getfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3.getfiles" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>remotekeys</strong> (<em>list</em><em> or </em><em>None</em>) – List of keys from findfiles to download.</p></li>
+<li><p><strong>short_name</strong> (<em>str</em><em> or </em><em>None</em>)</p></li>
+<li><p><strong>dates</strong> (<em>list</em><em> or </em><em>None</em>) – If remotekeys is None, then use short_name and dates with findfiles
+to get remotekeys</p></li>
+<li><p><strong>workdir</strong> (<em>str</em>) – Working root directory for downloading files. Defaults to
+self.workdir</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>localpaths</strong> – List of local paths where remotekeys have been stored</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.nav.NOAAs3.getfiles_from_form">
+<span class="sig-name descname"><span class="pre">getfiles_from_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.getfiles_from_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.nav.NOAAs3.getfiles_from_form" title="Link to this definition">¶</a></dt>
+<dd><p>Same as getfiles, but arguments are taken from the form object</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-goesutils.proj">
+<span id="goesutils-proj-module"></span><h2>goesutils.proj module<a class="headerlink" href="#module-goesutils.proj" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="goesutils.proj.getproj">
+<span class="sig-prename descclassname"><span class="pre">goesutils.proj.</span></span><span class="sig-name descname"><span class="pre">getproj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updatexy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/proj.html#getproj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.proj.getproj" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geods</strong> (<em>xarray.Dataset</em>) – Dataset with geospatial variables x, y, and goes_imager_projection</p></li>
+<li><p><strong>updatexy</strong> (<em>bool</em>) – If True, update x and y from radians to meters to be consistent with
+projection. If False, return sat_h so updates could be made.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If updatexy is False, proj and satellite perspective height (sat_h)
+will be returned. Otherwise, only proj</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>proj or proj, sat_h</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-goesutils.style">
+<span id="goesutils-style-module"></span><h2>goesutils.style module<a class="headerlink" href="#module-goesutils.style" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="goesutils.style.cmi2geocolor">
+<span class="sig-prename descclassname"><span class="pre">goesutils.style.</span></span><span class="sig-name descname"><span class="pre">cmi2geocolor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/style.html#cmi2geocolor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.style.cmi2geocolor" title="Link to this definition">¶</a></dt>
+<dd><p>Convert CMI_01 (B), CMI_02 (R), and CMI_03 (G’) to color. Steps
+as follows:</p>
+<ol class="arabic simple">
+<li><p>Clip all values to 0 to 1</p></li>
+<li><p>Raise all values to the power of (1 / 2.2)</p></li>
+<li><p>Replace G’ with G = 0.45 * R + 0.1 * G’ + 0.45 * B</p></li>
+<li><p>Clip all values to 0 to 1</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ds</strong> (<em>xarray.Dataset</em>) – Expected to be a ABI-L2-MCMIPC file opened with xarray. Must have
+variables B=CMI_C01, R=CMI_C02, and G’=CMI_C03</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rgb</strong> – Array shaped (y, x, RGB) with values appropriate for pyplot.imshow</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Needs citation. If I recall, this formula came from goes2go</p>
+</dd></dl>
+
+</section>
+<section id="module-goesutils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-goesutils" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="goesutils.NOAAs3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">goesutils.</span></span><span class="sig-name descname"><span class="pre">NOAAs3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'noaa-goes16'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.findfiles">
+<span class="sig-name descname"><span class="pre">findfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.findfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3.findfiles" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>short_name</strong> (<em>str</em>) – One of the items in get_shortnames</p></li>
+<li><p><strong>dates</strong> (<em>iterable</em>) – List or other iterable of date objects that support strftime</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>remotekeys</strong> – List of remote keys that can be retrieved from S3 bucket.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.findfiles_from_form">
+<span class="sig-name descname"><span class="pre">findfiles_from_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.findfiles_from_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3.findfiles_from_form" title="Link to this definition">¶</a></dt>
+<dd><p>Same as findfiles, but arguments are taken from the form object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.form">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#goesutils.NOAAs3.form" title="Link to this definition">¶</a></dt>
+<dd><p>ipywidgets form object for Graphical User Interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.get_shortnames">
+<span class="sig-name descname"><span class="pre">get_shortnames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.get_shortnames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3.get_shortnames" title="Link to this definition">¶</a></dt>
+<dd><p>Find all short names available from bucket (e.g., ABI-L2-AODC)
+Short names are defined in more detail at
+<a class="reference external" href="https://docs.opendata.aws/noaa-goes16/cics-readme.html">https://docs.opendata.aws/noaa-goes16/cics-readme.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Prefix</strong> – List of Prefixes (including traling /)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.getfiles">
+<span class="sig-name descname"><span class="pre">getfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remotekeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.getfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3.getfiles" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>remotekeys</strong> (<em>list</em><em> or </em><em>None</em>) – List of keys from findfiles to download.</p></li>
+<li><p><strong>short_name</strong> (<em>str</em><em> or </em><em>None</em>)</p></li>
+<li><p><strong>dates</strong> (<em>list</em><em> or </em><em>None</em>) – If remotekeys is None, then use short_name and dates with findfiles
+to get remotekeys</p></li>
+<li><p><strong>workdir</strong> (<em>str</em>) – Working root directory for downloading files. Defaults to
+self.workdir</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>localpaths</strong> – List of local paths where remotekeys have been stored</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="goesutils.NOAAs3.getfiles_from_form">
+<span class="sig-name descname"><span class="pre">getfiles_from_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/goesutils/nav.html#NOAAs3.getfiles_from_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#goesutils.NOAAs3.getfiles_from_form" title="Link to this definition">¶</a></dt>
+<dd><p>Same as getfiles, but arguments are taken from the form object</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">goesutils</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">goesutils User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">goesutils Example Gallery</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">goesutils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-goesutils.abi">goesutils.abi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-goesutils.nav">goesutils.nav module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-goesutils.proj">goesutils.proj module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-goesutils.style">goesutils.style module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-goesutils">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">goesutils</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../auto_examples/maps/plot_truecolor.html" title="previous chapter">Plot Truecolor Approximation</a></li>
+      <li>Next: <a href="goesutils.tests.html" title="next chapter">goesutils.tests package</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2023, Barron H. Henderson.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/api/goesutils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

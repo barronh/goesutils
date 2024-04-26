@@ -1,0 +1,21 @@
+goesutils.tests package
+=======================
+
+Submodules
+----------
+
+goesutils.tests.test\_nav module
+--------------------------------
+
+.. automodule:: goesutils.tests.test_nav
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: goesutils.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

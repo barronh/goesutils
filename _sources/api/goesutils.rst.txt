@@ -1,0 +1,53 @@
+goesutils package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   goesutils.tests
+
+Submodules
+----------
+
+goesutils.abi module
+--------------------
+
+.. automodule:: goesutils.abi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+goesutils.nav module
+--------------------
+
+.. automodule:: goesutils.nav
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+goesutils.proj module
+---------------------
+
+.. automodule:: goesutils.proj
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+goesutils.style module
+----------------------
+
+.. automodule:: goesutils.style
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: goesutils
+   :members:
+   :undoc-members:
+   :show-inheritance:
