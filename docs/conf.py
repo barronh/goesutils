@@ -12,7 +12,6 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +21,7 @@ copyright = '2023, Barron H. Henderson'
 author = 'Barron H. Henderson'
 
 # The full version, including alpha/beta/rc tags
-with open('../../goesutils/__init__.py', 'r') as initf:
+with open('../goesutils/__init__.py', 'r') as initf:
     for l in initf.readline():
         if '__version__' in l:
             release = eval(l.split(' = ')[1])
@@ -54,7 +53,7 @@ extensions = [
 ]
 
 sphinx_gallery_conf = {
-    'examples_dirs': '../../examples',
+    'examples_dirs': '../examples',
     'gallery_dirs': 'auto_examples',
 }
 

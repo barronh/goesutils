@@ -21,7 +21,7 @@ class NOAAs3:
         import pandas as pd
 
         nav = NOAAs3('noaa-goes16')
-        dates = pd.date_range('2023-09-21 12', '2023-09-21 18', freq='H')
+        dates = pd.date_range('2023-09-21 12', '2023-09-21 18', freq='h')
         remotekeys = nav.findfiles('ABI-L2-AODC', dates)
         print(len(remotekeys))
         # 84
@@ -53,6 +53,9 @@ class NOAAs3:
     def get_shortnames(self):
         """
         Find all short names available from bucket (e.g., ABI-L2-AODC)
+        Short names are defined in more detail at
+        https://docs.opendata.aws/noaa-goes16/cics-readme.html
+
         Returns
         -------
         Prefix : list
@@ -77,10 +80,13 @@ class NOAAs3:
         remotekeys : list
             List of remote keys that can be retrieved from S3 bucket.
         """
+        import pandas as pd
+
         if short_name.endswith('/'):
             short_name = short_name[:-1]
 
         remotekeys = []
+        dates = pd.to_datetime(dates)
         for date in dates:
             prefix = f'{short_name}/{date:%Y/%j/%H}/'
             bfiles = self.bucket.objects.filter(Prefix=prefix, Delimiter='/')
@@ -180,9 +186,9 @@ class NOAAs3:
         starth = children[3].children[0].value
         endh = children[3].children[1].value
         dates = pd.date_range(
-            pd.to_datetime(startd) + pd.to_timedelta(starth, unit='H'),
-            pd.to_datetime(endd) + pd.to_timedelta(endh, unit='H'),
-            freq='H'
+            pd.to_datetime(startd) + pd.to_timedelta(starth, unit='h'),
+            pd.to_datetime(endd) + pd.to_timedelta(endh, unit='h'),
+            freq='h'
         )
         return self.findfiles(short_name, dates)
 

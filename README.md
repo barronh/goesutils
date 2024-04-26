@@ -5,4 +5,5 @@ Utilities for working with NOAA GOES satellite products.
 # Examples
 
 ```python
+import goesutils
 ```

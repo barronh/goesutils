@@ -21,6 +21,10 @@ def cmi2geocolor(ds):
     -------
     rgb : numpy.array
         Array shaped (y, x, RGB) with values appropriate for pyplot.imshow
+    Notes
+    -----
+    
+    Needs citation. If I recall, this formula came from goes2go
     """
     import numpy as np
 
