@@ -51,7 +51,7 @@ extent = [ds.x[0] - hdx, ds.x[-1] + hdx, ds.y[-1] + hdy, ds.y[0] - hdy]
 
 # Make a plot using standard matplotlib functions
 fig, ax = plt.subplots()
-p = ax.imshow(rgb[::-1], extent=extent)
+p = ax.imshow(rgb[::-1], extent=extent, origin='lower')
 ax.set(xticks=[], yticks=[])
 # Defining the extent allows you to plot other geographic information on top
 cno.drawstates(ax=ax, color='white')
@@ -59,4 +59,4 @@ cno.drawstates(ax=ax, color='white')
 # Show the figure
 plt.show()
 # Or save the figure
-# fig.savefig('color.png')
+fig.savefig('color.png')
