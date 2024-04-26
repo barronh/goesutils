@@ -45,7 +45,7 @@ localpaths = nav.getfiles(remotepaths[:1])
 from goesutils.proj import getproj
 import pycno
 
-aodds = xr.open_mfdataset(localpaths)
+aodds = xr.open_dataset(localpaths[0])
 proj = getproj(aodds)
 cno = pycno.cno(proj=proj)
 qm = aodds['AOD'].where(aodds['DQF'] >= 1).plot(vmin=0)
