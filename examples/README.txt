@@ -4,8 +4,6 @@ goesutils Example Gallery
 This gallery houses examples on how to use goesutils to do various
 analyses. This includes downloading and visualizing the data.
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 To install for exmaples, run teh command below (use --user if not an admin):
 
 .. code-block:: bash
