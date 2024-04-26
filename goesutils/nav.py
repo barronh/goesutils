@@ -2,7 +2,7 @@ __all__ = ['NOAAs3']
 
 
 class NOAAs3:
-    def __init__(self, bucket, workdir='.'):
+    def __init__(self, bucket='noaa-goes16', workdir='.'):
         """
         Create a NOAA s3 navigation object.
 
@@ -158,8 +158,10 @@ class NOAAs3:
             datesa = DatePicker(description='Start Date', value=startd)
             hrs = list(range(0, 24))
             hoursa = Dropdown(options=hrs, description='Start Hour')
+            hoursa.value = 17
             dateea = DatePicker(value=startd, description='End Date')
             hourea = Dropdown(options=hrs, description='End Hour')
+            hourea.value = 17
             form = Box([
                 Box([Label(value='GOES Options')], layout=form_item_layout),
                 Box([prodd], layout=form_item_layout),

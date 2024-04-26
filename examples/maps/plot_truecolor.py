@@ -47,7 +47,7 @@ extent = [ds.x[0] - hdx, ds.x[-1] + hdx, ds.y[-1] + hdy, ds.y[0] - hdy]
 
 # %%
 # Make a plot with state overlay
-# -------------------------
+# ------------------------------
 
 # Make a plot using standard matplotlib functions
 fig, ax = plt.subplots()

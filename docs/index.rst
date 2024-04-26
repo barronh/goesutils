@@ -39,7 +39,7 @@ Quick Links
 -----------
 
 * :doc:`auto_examples/index`
-* :doc:`goesutils`
+* :doc:`api/goesutils`
 
 .. toctree::
    :maxdepth: 2
@@ -48,4 +48,6 @@ Quick Links
 
    self
    auto_examples/index
-   goesutils
+   api/goesutils
+   api/modules
+

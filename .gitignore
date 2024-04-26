@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+*.png
+s3.noaa-*
 # Distribution / packaging
 .Python
 build/
